@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ShoppingDashboardComponent } from './shopping-dashboard/shopping-dashboard.component';
+import { SupportComponent } from './support/support.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'signup', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  
+  { path: 'add-user', component: AddUserComponent },
+  { path: '', component: ShoppingDashboardComponent },
+  { path: 'support', component: SupportComponent }
+  
 ];
 
 @NgModule({

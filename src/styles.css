@@ -1,2 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~ngx-toastr/toastr';
+
+
+.loader{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    width: 4rem; 
+    height: 4rem;
+    opacity: 1;
+}
+
+
+.wrapper{
+    background-color: rgba(0,0,0,0.5);    
+    z-index: 1;
+    width: 100%;
+    height: -webkit-fill-available;
+    position: absolute;
+    opacity: .2;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.close-box{
+  text-align: right;
+  margin-right: 8px;
+}

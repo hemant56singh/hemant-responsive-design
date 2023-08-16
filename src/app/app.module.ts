@@ -1,60 +1,50 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { MatButtonModule} from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatSelectModule } from '@angular/material/select';
-import { HeaderComponent } from './dashboard/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ShoppingDashboardComponent } from './shopping-dashboard/shopping-dashboard.component';
+import { NgChatModule } from 'ng-chat';
+import { SocketioService } from 'src/services/socketio-service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { SupportComponent } from './support/support.component';
+// const config: SocketIoConfig = { 
+//   url: 'http://localhost:3000', 
+//   options: {} 
+// };
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
-    LoginComponent,
-    DashboardComponent,
-    HeaderComponent
+    AddUserComponent,
+    ShoppingDashboardComponent,
+    SupportComponent
   ],
   imports: [
+    CommonModule,
+    HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
-    CommonModule,    
-    // MatIconModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatFormFieldModule,
-    // MatSelectModule,
+    NgChatModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true
     }),
+    // SocketIoModule.forRoot(config)
 
   ],
-  providers: [ToastrService],
-  bootstrap: [AppComponent],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    // MatIconModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatFormFieldModule,
-    // MatSelectModule
-  ]
+  providers: [ ToastrService, SocketioService ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {  }
+export class AppModule { }
