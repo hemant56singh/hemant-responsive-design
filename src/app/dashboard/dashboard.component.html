@@ -1,0 +1,128 @@
+<h3>User data</h3>
+
+<table style="width:100%">
+    <tr> 
+        <th>
+            First Name
+        </th>
+        <th>
+            Middle Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            DOB
+        </th>
+        <th>
+            Mobile
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Address Line 1
+        </th>
+        <th>
+            Address Line 2
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            State
+        </th>
+        <th>
+            Action
+        </th>      
+    </tr>
+    <tr *ngFor="let data of allData; let i = index">
+        <td>
+            <tr>{{data.fName}}</tr>
+        </td>
+        <td>
+            <tr>{{data.mName}}</tr>
+        </td>
+        <td>
+            <tr>{{data.lName}}</tr>
+        </td>
+        <td>
+            <tr>{{data.date}}</tr>
+        </td>
+        <td>
+            <tr>{{data.mobile}}</tr>
+        </td>
+        <td>
+            <tr>{{data.email}}</tr>
+        </td>
+        <td>
+            <tr>{{data.addLine1}}</tr>
+        </td>
+        <td>
+            <tr>{{data.addLine2}}</tr>
+        </td>
+        <td>
+            <tr>{{data.city}}</tr>
+        </td>
+        <td>
+            <tr>{{data.state}}</tr>
+        </td>
+        <td >
+           <label style="cursor: pointer;" (click)="editData(data, i)">Edit</label> 
+        </td>
+    </tr>
+</table>
+
+<button (click)="updateUsername()">Update data</button>
+
+
+<!-- <div class="add-lessons-form" [formGroup]="dataform">
+    <ng-container >
+        <ng-container formArrayName="lessons" *ngFor="let lessonForm of lessons?.controls; let i = index">
+            <div class="lesson-form-row" [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                    <input matInput formControlName="title" placeholder="Lesson title">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-select formControlName="level" placeholder="Lesson level">
+                        <mat-option value="beginner">Beginner</mat-option>
+                        <mat-option value="intermediate">Intermediate</mat-option>
+                        <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-icon class="delete-btn" (click)="deleteLesson(i)">
+                    delete_forever</mat-icon>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <button mat-mini-fab (click)="addLesson()">
+            <mat-icon class="add-course-btn">add</mat-icon>
+        </button>
+        
+</div> -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <form [formGroup]="editForm">
+        <h4>First name: <input type="text" placeholder="first name" formControlName="fName"></h4> 
+        <h4>Middle name: <input type="text" placeholder="middle name" formControlName="mName"></h4> 
+        <h4>Last name: <input type="text" placeholder="last name" formControlName="lName"></h4> 
+        <h4>DOB: <input type="date" formControlName="dob"></h4> 
+        <h4>Mobile: <input type="text" placeholder="mobile" formControlName="mobile"></h4> 
+        <h4>Email: <input type="text" placeholder="Email" formControlName="email"></h4> 
+        <h4>Address line 1: <input type="text" placeholder="address line 1" formControlName="addLine1"></h4> 
+        <h4>Address line 2: <input type="text" placeholder="address line 2" formControlName="addLine2"></h4> 
+        <h4>City: <input type="text" placeholder="city" formControlName="city"></h4> 
+        <h4>State: <input type="text" placeholder="state" formControlName="state"></h4> 
+        <h4>Password: <input type="text" placeholder="password" formControlName="password"></h4> 
+        <button (click)="closeModal()">Close</button> &nbsp; <button (click)="updateData()">Update</button>
+        </form>
+    </div>
+  
+  </div>

@@ -1,0 +1,6 @@
+<h3>Login</h3>
+<form [formGroup]="loginForm">
+    <h4>Email: <input type="text" formControlName="email"></h4>
+    <h4>Password <input type="text" formControlName="password"></h4>
+    <button (click)="goToSignUp()">SignUp</button> &nbsp;<button (click)="goToDashboard()">Login</button>
+</form>

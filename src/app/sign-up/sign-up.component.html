@@ -1,0 +1,15 @@
+<h2>Sign up</h2>
+<form [formGroup]="signupForm">
+<h4>First name: <input type="text" placeholder="first name" formControlName="fName"></h4> 
+<h4>Middle name: <input type="text" placeholder="middle name" formControlName="mName"></h4> 
+<h4>Last name: <input type="text" placeholder="last name" formControlName="lName"></h4> 
+<h4>DOB: <input type="date" formControlName="dob"></h4> 
+<h4>Mobile: <input type="text" placeholder="mobile" formControlName="mobile"></h4> 
+<h4>Email: <input type="text" placeholder="Email" formControlName="email"></h4> 
+<h4>Address line 1: <input type="text" placeholder="address line 1" formControlName="addLine1"></h4> 
+<h4>Address line 2: <input type="text" placeholder="address line 2" formControlName="addLine2"></h4> 
+<h4>City: <input type="text" placeholder="city" formControlName="city"></h4> 
+<h4>State: <input type="text" placeholder="state" formControlName="state"></h4> 
+<h4>Password: <input type="text" placeholder="password" formControlName="password"></h4> 
+<button>Reset</button> &nbsp; <button (click)="saveData()">Submit</button>
+</form>
