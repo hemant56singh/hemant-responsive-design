@@ -39,8 +39,6 @@ export class ShoppingDashboardComponent implements OnInit {
     // socket.on('Message Added', function(data:any) {
     //   console.log(data);
     // })
-
-
   }
 
 
